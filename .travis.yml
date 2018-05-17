@@ -1,11 +1,11 @@
-sudo: required #is required to use docker service in travis
+sudo: required
 
-language: java #can be any language, just php for example
+language: php
 
-# services:
-#   - docker # required, but travis uses older version of docker :(
+services:
+  - docker
 
-# after_success:
-#   - docker --version  # document the version travis is using
-#   - docker build -t  android-jenkins .
+before_install:
+  - docker build -t android-jenkins .
+  - docker ps -a
   
