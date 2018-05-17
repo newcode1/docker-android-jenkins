@@ -5,10 +5,14 @@ language: php
 services:
   - docker
 
+
 script:
   - echo "no build!"
 
 before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+  - docker --version
   - docker build -t android-jenkins .
   - docker ps -a
   
