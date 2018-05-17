@@ -5,6 +5,9 @@ language: php
 services:
   - docker
 
+script:
+  - echo "no build!"
+
 before_install:
   - docker build -t android-jenkins .
   - docker ps -a
